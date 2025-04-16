@@ -1,5 +1,7 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+This project provides examples on how to properly handle WCAG Accessibility requirements. For more information about accessibility guidelines, visit the [WCAG documentation](https://www.w3.org/WAI/standards-guidelines/wcag/).
+
 ## Getting Started
 
 First, run the development server:
