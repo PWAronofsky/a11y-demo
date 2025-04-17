@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ToggleContent } from "@/app/components/ToggleContent";
 import { AlertDemo } from "@/app/components/AlertDemo";
+import { KeyboardNavigation } from "@/app/components/KeyboardNavigation";
 
 export default function Home() {
   return (
@@ -46,17 +47,7 @@ export default function Home() {
         <section aria-labelledby="keyboard-heading" className="mb-8">
           <h2 id="keyboard-heading" className="text-2xl font-bold mb-4">3. Keyboard Navigation</h2>
           <div className="bg-gray-100 dark:bg-gray-900 p-4 rounded">
-            <div className="space-y-4">
-              <button className="block w-full text-left p-2 bg-white dark:bg-gray-700 rounded border border-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                First focusable element
-              </button>
-              <button className="block w-full text-left p-2 bg-white dark:bg-gray-700 rounded border border-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                Second focusable element
-              </button>
-              <button className="block w-full text-left p-2 bg-white dark:bg-gray-700 rounded border border-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                Third focusable element
-              </button>
-            </div>
+            <KeyboardNavigation />
           </div>
         </section>
 
