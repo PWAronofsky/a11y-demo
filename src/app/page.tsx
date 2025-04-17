@@ -3,6 +3,7 @@ import { ToggleContent } from "@/app/components/ToggleContent";
 import { AlertDemo } from "@/app/components/AlertDemo";
 import { KeyboardNavigation } from "@/app/components/KeyboardNavigation";
 import { NavigationLink } from "@/app/components/NavigationLink";
+import { AccessibleForm } from "@/app/components/AccessibleForm";
 
 export default function Home() {
   const scrollToHeading = (id: string) => {
@@ -86,34 +87,20 @@ export default function Home() {
 
         <section aria-labelledby="forms-heading" className="mb-8">
           <h2 id="forms-heading" tabIndex={-1} className="text-2xl font-bold mb-4">4. Accessible Forms</h2>
-          <form className="bg-gray-100 dark:bg-gray-900 p-4 rounded">
-            <div className="mb-4">
-              <label htmlFor="name" className="block mb-2 font-medium text-gray-900 dark:text-gray-100">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                className="w-full p-2 border border-gray-300 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                aria-required="true"
-              />
-            </div>
-            <div className="mb-4">
-              <label htmlFor="email" className="block mb-2 font-medium text-gray-900 dark:text-gray-100">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                className="w-full p-2 border border-gray-300 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                aria-required="true"
-              />
-            </div>
-            <button
-              type="submit"
-              className="bg-blue-500 dark:bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-            >
-              Submit
-            </button>
-          </form>
+          <div className="bg-gray-100 dark:bg-gray-900 p-4 rounded">
+            <p className="mb-4 text-gray-900 dark:text-gray-100">
+              This form demonstrates proper form accessibility features including:
+            </p>
+            <ul className="list-disc pl-6 mb-4 text-gray-900 dark:text-gray-100">
+              <li>Proper labeling and associations</li>
+              <li>Required field indicators</li>
+              <li>Error messages and validation</li>
+              <li>Automatic phone number formatting</li>
+              <li>Keyboard navigation</li>
+              <li>Screen reader support</li>
+            </ul>
+            <AccessibleForm />
+          </div>
         </section>
 
         <section aria-labelledby="images-heading" className="mb-8">

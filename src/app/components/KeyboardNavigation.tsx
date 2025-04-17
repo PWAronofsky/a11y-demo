@@ -18,7 +18,7 @@ export function KeyboardNavigation() {
         </ul>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-4" role="group" aria-label="Navigation options">
         {['First item', 'Second item', 'Third item'].map((item, index) => (
           <button
             key={index}
@@ -28,6 +28,8 @@ export function KeyboardNavigation() {
                 ? 'bg-blue-100 dark:bg-blue-900 border-blue-500 text-blue-900 dark:text-blue-100'
                 : 'bg-white dark:bg-gray-700 border-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 text-gray-900 dark:text-gray-100'
             } focus:outline-none focus:ring-2 focus:ring-blue-500`}
+            aria-pressed={activeIndex === index}
+            aria-current={activeIndex === index ? "true" : "false"}
           >
             {item}
           </button>
