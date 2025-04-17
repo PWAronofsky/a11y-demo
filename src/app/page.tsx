@@ -2,8 +2,21 @@ import Image from "next/image";
 import { ToggleContent } from "@/app/components/ToggleContent";
 import { AlertDemo } from "@/app/components/AlertDemo";
 import { KeyboardNavigation } from "@/app/components/KeyboardNavigation";
+import { NavigationLink } from "@/app/components/NavigationLink";
 
 export default function Home() {
+  const scrollToHeading = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.focus();
+    }
+  };
+
+  const handleLinkClick = (e: React.MouseEvent | React.KeyboardEvent, id: string) => {
+    e.preventDefault();
+    scrollToHeading(id);
+  };
+
   return (
     <div className="min-h-screen p-8 max-w-4xl mx-auto" suppressHydrationWarning>
       <header className="mb-8">
@@ -13,23 +26,43 @@ export default function Home() {
 
       <main>
         <section aria-labelledby="semantic-heading" className="mb-8">
-          <h2 id="semantic-heading" className="text-2xl font-bold mb-4">1. Semantic HTML</h2>
+          <h2 id="semantic-heading" tabIndex={-1} className="text-2xl font-bold mb-4">1. Semantic HTML</h2>
           <div className="bg-gray-100 dark:bg-gray-900 p-4 rounded">
             <p className="text-gray-900 dark:text-gray-100">This section uses proper heading hierarchy and semantic HTML elements.</p>
             <nav aria-label="Main navigation" className="mt-4">
               <ul className="list-disc pl-6 text-gray-900 dark:text-gray-100">
-                <li><a href="#semantic-heading" className="text-blue-600 dark:text-blue-400 hover:underline">Semantic HTML</a></li>
-                <li><a href="#aria-heading" className="text-blue-600 dark:text-blue-400 hover:underline">ARIA Attributes</a></li>
-                <li><a href="#keyboard-heading" className="text-blue-600 dark:text-blue-400 hover:underline">Keyboard Navigation</a></li>
-                <li><a href="#forms-heading" className="text-blue-600 dark:text-blue-400 hover:underline">Accessible Forms</a></li>  
-                <li><a href="#images-heading" className="text-blue-600 dark:text-blue-400 hover:underline">Accessible Images</a></li>
+                <li>
+                  <NavigationLink target="semantic-heading">
+                    Semantic HTML
+                  </NavigationLink>
+                </li>
+                <li>
+                  <NavigationLink target="aria-heading">
+                    ARIA Attributes
+                  </NavigationLink>
+                </li>
+                <li>
+                  <NavigationLink target="keyboard-heading">
+                    Keyboard Navigation
+                  </NavigationLink>
+                </li>
+                <li>
+                  <NavigationLink target="forms-heading">
+                    Accessible Forms
+                  </NavigationLink>
+                </li>  
+                <li>
+                  <NavigationLink target="images-heading">
+                    Accessible Images
+                  </NavigationLink>
+                </li>
               </ul>
             </nav>
           </div>
         </section>
 
         <section aria-labelledby="aria-heading" className="mb-8">
-          <h2 id="aria-heading" className="text-2xl font-bold mb-4">2. ARIA Attributes</h2>
+          <h2 id="aria-heading" tabIndex={-1} className="text-2xl font-bold mb-4">2. ARIA Attributes</h2>
           <div className="bg-gray-100 dark:bg-gray-900 p-4 rounded">
             <div className="mb-6">
               <h3 className="text-lg font-semibold mb-2">Alert Demo</h3>
@@ -45,14 +78,14 @@ export default function Home() {
         </section>
 
         <section aria-labelledby="keyboard-heading" className="mb-8">
-          <h2 id="keyboard-heading" className="text-2xl font-bold mb-4">3. Keyboard Navigation</h2>
+          <h2 id="keyboard-heading" tabIndex={-1} className="text-2xl font-bold mb-4">3. Keyboard Navigation</h2>
           <div className="bg-gray-100 dark:bg-gray-900 p-4 rounded">
             <KeyboardNavigation />
           </div>
         </section>
 
         <section aria-labelledby="forms-heading" className="mb-8">
-          <h2 id="forms-heading" className="text-2xl font-bold mb-4">4. Accessible Forms</h2>
+          <h2 id="forms-heading" tabIndex={-1} className="text-2xl font-bold mb-4">4. Accessible Forms</h2>
           <form className="bg-gray-100 dark:bg-gray-900 p-4 rounded">
             <div className="mb-4">
               <label htmlFor="name" className="block mb-2 font-medium text-gray-900 dark:text-gray-100">Name</label>
@@ -84,7 +117,7 @@ export default function Home() {
         </section>
 
         <section aria-labelledby="images-heading" className="mb-8">
-          <h2 id="images-heading" className="text-2xl font-bold mb-4">5. Accessible Images</h2>
+          <h2 id="images-heading" tabIndex={-1} className="text-2xl font-bold mb-4">5. Accessible Images</h2>
           <div className="bg-gray-100 dark:bg-gray-900 p-4 rounded">
             <Image
               src="/next.svg"
